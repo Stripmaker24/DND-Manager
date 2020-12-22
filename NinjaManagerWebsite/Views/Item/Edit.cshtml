@@ -1,0 +1,102 @@
+﻿@model CEDItem
+
+<form method="post" asp-action="Edit" class="dragon-form">
+    <input asp-for="item.Id" hidden />
+    <div>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="dragon-form-header">
+            <h2 class="pl-3">Edit Item</h2>
+        </div>
+        <div class="p-3 row">
+            <div class="col-8">
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="item.Name"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="item.Name" class="form-control" />
+                        <span asp-validation-for="item.Name" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="item.Value"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="item.Value" class="form-control" />
+                        <span asp-validation-for="item.Value" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="item.Strenght"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="item.Strenght" class="form-control" />
+                        <span asp-validation-for="item.Strenght" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="item.Dexterity"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="item.Dexterity" class="form-control" />
+                        <span asp-validation-for="item.Dexterity" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="item.Intelligence"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="item.Intelligence" class="form-control" />
+                        <span asp-validation-for="item.Intelligence" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="categories"></label>
+                        <p class="text-danger">When a Item is transmuted all of it's kind will as well.</p>
+                        <p class="text-danger">If a ninja has this item but also has another of the new category, the ninja is forced to sell this Item.</p>
+                        <p class="text-danger">A ninja does not have a backpack to store items!</p>
+                    </div>
+                    <div class="col-md-10">
+                        <select name="item.CategoryId" style="min-width:280px">
+                            @foreach (var item in Model.categories)
+                            {
+                                @if (item.Id == Model.item.CategoryId)
+                                {
+                                    <option selected="selected" value="@item.Id">@item.Name</option>
+                                }
+                                else 
+                                { 
+                                    <option value="@item.Id">@item.Name</option>
+                                }
+                            }
+                        </select>
+                        <span asp-validation-for="categories" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-8 offset-4 row">
+                        <div class="col">
+                            <input type="submit" class="btn golden-button w-100" value="Edit" />
+                        </div>
+                        <div class="col">
+                            <a asp-action="Index" class="btn bronze-button w-100"><i class="fas fa-sign-out-alt"></i> Back</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4"></div>
+        </div>
+    </div>
+</form>
+
+@section Scripts
+{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

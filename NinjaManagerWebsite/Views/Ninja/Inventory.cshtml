@@ -1,0 +1,249 @@
+﻿@model NinjaInventory
+
+<div class="container">
+    <div class="row">
+        <table class="dragon-table" style="width:100%">
+            <tr>
+                <td>Name:</td>
+                <td>@Model.Ninja.Name</td>
+            </tr>
+            <tr>
+                <td>Gold:</td>
+                <td>@Model.Ninja.Gold</td>
+            </tr>
+            <tr>
+                <td>Strength:</td>
+                <td>@Model.totalStr</td>
+            </tr>
+            <tr>
+                <td>Dexterity:</td>
+                <td>@Model.totalDex</td>
+            </tr>
+            <tr>
+                <td>Intelligence:</td>
+                <td>@Model.totalInt</td>
+            </tr>
+            <tr>
+                <td>Value of Equipment:</td>
+                <td>@Model.totalItemValue</td>
+            </tr>
+        </table>
+    </div>
+    <div class="row" style="margin-top:50px">
+        <div class="col">
+            <div class="row">
+                <table class="dragon-item-table">
+                    <tr>
+                        <td>Name(type):</td>
+                        @if (Model.headItem.item != null)
+                        { <td>@Model.headItem.item.Name (@Model.headItem.category.Name)</td> }
+                        else {<td></td> }
+                    </tr>
+                    <tr>
+                        <td>Value:</td>
+                        @if (Model.headItem.item != null)
+                        { <td>@Model.headItem.item.Value</td> }
+                        else {<td></td> }
+                    </tr>
+                    <tr>
+                        <td>Strength:</td>
+                        @if (Model.headItem.item != null)
+                        { <td>@Model.headItem.item.Strenght</td> }
+                        else {<td></td> }
+                    </tr>
+                    <tr>
+                        <td>Dexterity:</td>
+                        @if (Model.headItem.item != null)
+                        { <td>@Model.headItem.item.Dexterity</td> }
+                        else {<td></td> }
+                    </tr>
+                    <tr>
+                        <td>Intelligence:</td>
+                        @if (Model.headItem.item != null)
+                        { <td>@Model.headItem.item.Intelligence</td> }
+                        else {<td></td> }
+                    </tr>
+                </table>
+            </div>
+            <br/>
+            <div class="row">
+                <table class="dragon-item-table">
+                    <tr>
+                        <td>Name(type):</td>
+                        @if (Model.chestItem.item != null)
+                        { <td>@Model.chestItem.item.Name (@Model.chestItem.category.Name)</td> }
+                        else {<td></td> }
+                    </tr>
+                    <tr>
+                        <td>Value:</td>
+                        @if (Model.chestItem.item != null)
+                        { <td>@Model.chestItem.item.Value</td> }
+                        else {<td></td> }
+                    </tr>
+                    <tr>
+                        <td>Strength:</td>
+                        @if (Model.chestItem.item != null)
+                        { <td>@Model.chestItem.item.Strenght</td> }
+                        else {<td></td> }
+                    </tr>
+                    <tr>
+                        <td>Dexterity:</td>
+                        @if (Model.chestItem.item != null)
+                        { <td>@Model.chestItem.item.Dexterity</td> }
+                        else {<td></td> }
+                    </tr>
+                    <tr>
+                        <td>Intelligence:</td>
+                        @if (Model.chestItem.item != null)
+                        { <td>@Model.chestItem.item.Intelligence</td> }
+                        else {<td></td> }
+                    </tr>
+                </table>
+            </div>
+            <br/>
+            <div class="row">
+                <table class="dragon-item-table">
+                    <tr>
+                        <td>Name(type):</td>
+                        @if (Model.handItem.item != null)
+                        { <td>@Model.handItem.item.Name (@Model.handItem.category.Name)</td> }
+                        else {<td></td> }
+                    </tr>
+                    <tr>
+                        <td>Value:</td>
+                        @if (Model.handItem.item != null)
+                        { <td>@Model.handItem.item.Value</td> }
+                        else {<td></td> }
+                    </tr>
+                    <tr>
+                        <td>Strength:</td>
+                        @if (Model.handItem.item != null)
+                        { <td>@Model.handItem.item.Strenght</td> }
+                        else {<td></td> }
+                    </tr>
+                    <tr>
+                        <td>Dexterity:</td>
+                        @if (Model.handItem.item != null)
+                        { <td>@Model.handItem.item.Dexterity</td> }
+                        else {<td></td> }
+                    </tr>
+                    <tr>
+                        <td>Intelligence:</td>
+                        @if (Model.handItem.item != null)
+                        { <td>@Model.handItem.item.Intelligence</td> }
+                        else {<td></td> }
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="col">
+            <img src="~/Images/Unkown Kight.png" class="mx-auto d-block">
+        </div>
+        <div class="col">
+            <div class="row">
+                <table class="dragon-item-table">
+                    <tr>
+                        <td>Name(type):</td>
+                        @if (Model.feetItem.item != null)
+                        { <td>@Model.feetItem.item.Name (@Model.feetItem.category.Name)</td> }
+                        else {<td></td> }
+                    </tr>
+                    <tr>
+                        <td>Value:</td>
+                        @if (Model.feetItem.item != null)
+                        { <td>@Model.headItem.item.Value</td> }
+                        else {<td></td> }
+                    </tr>
+                    <tr>
+                        <td>Strength:</td>
+                        @if (Model.feetItem.item != null)
+                        { <td>@Model.feetItem.item.Strenght</td> }
+                        else {<td></td> }
+                    </tr>
+                    <tr>
+                        <td>Dexterity:</td>
+                        @if (Model.feetItem.item != null)
+                        { <td>@Model.feetItem.item.Dexterity</td> }
+                        else {<td></td> }
+                    </tr>
+                    <tr>
+                        <td>Intelligence:</td>
+                        @if (Model.feetItem.item != null)
+                        { <td>@Model.feetItem.item.Intelligence</td> }
+                        else {<td></td> }
+                    </tr>
+                </table>
+            </div>
+            <br/>
+            <div class="row">
+                <table class="dragon-item-table">
+                    <tr>
+                        <td>Name(type):</td>
+                        @if (Model.ringItem.item != null)
+                        { <td>@Model.ringItem.item.Name (@Model.ringItem.category.Name)</td> }
+                        else {<td></td> }
+                    </tr>
+                    <tr>
+                        <td>Value:</td>
+                        @if (Model.ringItem.item != null)
+                        { <td>@Model.ringItem.item.Value</td> }
+                        else {<td></td> }
+                    </tr>
+                    <tr>
+                        <td>Strength:</td>
+                        @if (Model.ringItem.item != null)
+                        { <td>@Model.ringItem.item.Strenght</td> }
+                        else {<td></td> }
+                    </tr>
+                    <tr>
+                        <td>Dexterity:</td>
+                        @if (Model.ringItem.item != null)
+                        { <td>@Model.ringItem.item.Dexterity</td> }
+                        else {<td></td> }
+                    </tr>
+                    <tr>
+                        <td>Intelligence:</td>
+                        @if (Model.ringItem.item != null)
+                        { <td>@Model.ringItem.item.Intelligence</td> }
+                        else {<td></td> }
+                    </tr>
+                </table>
+            </div>
+            <br/>
+            <div class="row">
+                <table class="dragon-item-table">
+                    <tr>
+                        <td>Name(type):</td>
+                        @if (Model.necklaceItem.item != null)
+                        { <td>@Model.necklaceItem.item.Name (@Model.necklaceItem.category.Name)</td> }
+                        else {<td></td> }
+                    </tr>
+                    <tr>
+                        <td>Value:</td>
+                        @if (Model.necklaceItem.item != null)
+                        { <td>@Model.necklaceItem.item.Value</td> }
+                        else {<td></td> }
+                    </tr>
+                    <tr>
+                        <td>Strength:</td>
+                        @if (Model.necklaceItem.item != null)
+                        { <td>@Model.necklaceItem.item.Strenght</td> }
+                        else {<td></td> }
+                    </tr>
+                    <tr>
+                        <td>Dexterity:</td>
+                        @if (Model.necklaceItem.item != null)
+                        { <td>@Model.necklaceItem.item.Dexterity</td> }
+                        else {<td></td> }
+                    </tr>
+                    <tr>
+                        <td>Intelligence:</td>
+                        @if (Model.necklaceItem.item != null)
+                        { <td>@Model.necklaceItem.item.Intelligence</td> }
+                        else {<td></td> }
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

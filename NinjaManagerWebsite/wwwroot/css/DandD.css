@@ -1,0 +1,183 @@
+﻿.ninja-nav {
+    background-color:black;
+}
+
+.ninja-nav-link {
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    transition-duration: 0.4s;
+}
+
+.ninja-nav-link:hover {
+    text-decoration: none;
+    color: #c00000;
+}
+
+.ninja-border {
+    border: 2px solid #c00000;
+}
+
+.golden-button {
+    background-color: #ddad3d;
+}
+
+.platinum-button {
+    background-color: #e5e4e2;
+}
+
+.silver-button {
+    background-color: #aaa9ad;
+}
+
+.bronze-button {
+    background-color: #cd7f32;
+}
+
+.bronze-text {
+    color: #cd7f32;
+}
+
+.golden-text {
+    color: #ddad3d;
+}
+
+.dragon-table{
+    margin: 25px auto;
+    border-collapse: collapse;
+    border: 1px solid #c00000;
+    border-bottom: 2px solid #c00000;
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.10) 0px 10px 20px rgba(0,0,0,0.05), 0px 20px 20px rgba(0,0,0,0.05), 0px 30px 20px rgba(0,0,0,0.05);
+}
+
+.dragon-table tr:hover td {
+    color: black;
+    background-color: navajowhite;
+}
+
+.dragon-table th, .dragon-table td {
+    background-color: papayawhip;
+    color: grey;
+    border: 1px solid white;
+    padding: 12px 35px;
+    border-collapse: collapse;
+}
+
+.dragon-table th {
+    background: #c00000;
+    color: white;
+}
+
+.dragon-table th:last-child {
+    border-right: none;
+}
+
+.dragon-item-table {
+    margin: 0;
+    border-collapse: collapse;
+    border: 1px solid #c00000;
+    border-bottom: 2px solid #c00000;
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.10) 0px 10px 20px rgba(0,0,0,0.05), 0px 20px 20px rgba(0,0,0,0.05), 0px 30px 20px rgba(0,0,0,0.05);
+}
+
+.dragon-item-table tr:hover td {
+    color: black;
+    background-color: navajowhite;
+}
+
+.dragon-item-table th, .dragon-item-table td {
+    background-color: papayawhip;
+    color: grey;
+    border: 1px solid white;
+    padding: 2px 35px;
+    border-collapse: collapse;
+}
+
+.dragon-item-table th {
+    background: #c00000;
+    color: white;
+}
+
+.dragon-item-table th:last-child {
+    border-right: none;
+}
+
+.dragon-form {
+    margin: 25px auto;
+    border-collapse: collapse;
+    border: 1px solid #c00000;
+    border-bottom: 2px solid #c00000;
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.10) 0px 10px 20px rgba(0,0,0,0.05), 0px 20px 20px rgba(0,0,0,0.05), 0px 30px 20px rgba(0,0,0,0.05);
+    background-color: papayawhip;
+}
+
+.dragon-form-header{
+     background: #c00000;
+     color: white;
+     width: 100%;
+}
+
+.dragon-checkbox {
+    position: relative;
+}
+
+.dragon-checkbox input, svg{
+    width: 21px;
+    height: 21px;
+    display:block;
+}
+
+.dragon-checkbox input {
+    appearance: none;
+    position: relative;
+    outline: none;
+    background: #fff;
+    border: none;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: box-shadow .3s;
+    box-shadow: inset 0 0 0 var(--s, 1px) var(--b, #D1D6EE);
+}
+
+.dragon-checkbox input:hover {
+    --s: 2px;
+    --b: #BBC1E1;
+}
+
+.dragon-checkbox input:checked {
+    --b: #1E2235;
+    --s: 2px;
+    transition-delay: .4s;
+}
+
+.dragon-checkbox svg {
+    pointer-events: none;
+    fill: none;
+    stroke-width: 2px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: var(--stroke, #1E2235);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 21px;
+    height: 21px;
+    transform: scale(var(--scale, 1)) translateZ(0);
+    stroke-dasharray: 16.1 86.12, 86.12;
+    stroke-dashoffset: 16.1;
+    transition: stroke-dasharray .6s, stroke-dashoffset .6s;
+}
+
+.dragon-checkbox input:checked + svg {
+    stroke-dashoffset: 102.22;
+}
+
+
+body {
+   background-image:url("../Images/parchment-paper.jpg");
+   background-repeat:no-repeat;
+   background-attachment:fixed;
+   background-size: cover;
+}

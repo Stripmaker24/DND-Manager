@@ -1,0 +1,44 @@
+﻿@model Ninja
+
+<form method="post" class="dragon-form" asp-action="DeletePerm">
+    <input asp-for="Id" hidden />
+    <div>
+        <div class="dragon-form-header">
+            <h2 class="pl-3">Delete Player Character</h2>
+        </div>
+        <div class="p-3 row">
+            <div class="col-8">
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="Name"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="Name" disabled class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="Gold"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="Gold" disabled class="form-control" />
+                    </div>
+                </div>
+                <div class="row">
+                    <p class="text-danger">Want to kill this PC?</p>
+                </div>
+                <div class="form-group row">
+                    <div class="col-8 offset-4 row">
+                        <div class="col">
+                            <input type="submit" class="btn golden-button w-100" value="Yes" />
+                        </div>
+                        <div class="col">
+                            <a asp-action="Index" class="btn bronze-button w-100"><i class="fas fa-sign-out-alt"></i>No</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4"></div>
+        </div>
+    </div>
+</form>

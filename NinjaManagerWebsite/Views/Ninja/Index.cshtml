@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Ninja>
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="bronze-text">Player Characters Index</h2>
+        </div>
+        <div class="col-6 text-right">
+            <a asp-controller="Ninja" asp-action="Create" class="btn bronze-button">
+                Create New Player Character
+            </a>
+        </div>
+    </div>
+
+    <br /> <br />
+
+    @if (Model.Count() > 0)
+    {
+        <table class="dragon-table" style="width:100%">
+            <thead>
+                <tr>
+                    <th>
+                        PC Name
+                    </th>
+                    <th>
+                        PC Gold
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td width="20%">@item.Name</td>
+                        <td width="20%">@item.Gold</td>
+                        <td class="text-center">
+                            <div class="w-75 btn-group" role="group">
+                                <a asp-controller="Ninja" asp-route-Id="@item.Id" asp-action="Edit" class="btn bronze-button">
+                                    Edit PC
+                                </a>
+                                <a asp-controller="Ninja" asp-route-Id="@item.Id" asp-action="Delete" class="btn silver-button">
+                                    Delete PC
+                                </a>
+                                <a asp-controller="Ninja" asp-route-Id="@item.Id" asp-action="Inventory" class="btn golden-button">
+                                    Inventory
+                                </a>
+                                <a asp-controller="Shopping" asp-route-Id="@item.Id" asp-action="Index" class="btn platinum-button">
+                                    Shop
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p> No Player Characters found! </p>
+    }
+</div>

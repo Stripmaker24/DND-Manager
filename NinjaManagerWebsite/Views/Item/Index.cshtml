@@ -1,0 +1,85 @@
+﻿@model List<ItemWithCategory>
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="bronze-text">Item List</h2>
+        </div>
+        <div class="col-6 text-right">
+            <a asp-controller="Item" asp-action="Create" class="btn bronze-button">
+                Create New Item
+            </a>
+        </div>
+    </div>
+
+    <br /> <br />
+
+    @if (Model.Count() > 0)
+    {
+<table class="dragon-table" style="width:100%">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Value
+            </th>
+            <th>
+                Strength
+            </th>
+            <th>
+                Dexterity
+            </th>
+            <th>
+                Intelligence
+            </th>
+            <th>
+                Category
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @item.item.Name
+            </td>
+            <td>
+                @item.item.Value
+            </td>
+            <td>
+                @item.item.Strenght
+            </td>
+            <td>
+                @item.item.Dexterity
+            </td>
+            <td>
+                @item.item.Intelligence
+            </td>
+            <td>
+                @item.category.Name
+            </td>
+            <td class="text-center">
+                <div class="w-75 btn-group" role="group">
+                    <a asp-controller="Item" asp-route-Id="@item.item.Id" asp-action="Edit" class="btn bronze-button">
+                        Edit Item
+                    </a>
+                    <a asp-controller="Item" asp-route-Id="@item.item.Id" asp-action="Delete" class="btn silver-button">
+                        Delete Item
+                    </a>
+                </div>
+            </td>
+        </tr>
+        }
+        
+    </tbody>
+</table>
+    }
+    else
+    {
+        <p> No Items found! </p>
+    }
+</div>

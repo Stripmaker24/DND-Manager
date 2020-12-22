@@ -1,0 +1,65 @@
+﻿@model ShopMenu
+
+    <div class="container p-3">
+        <div class="text-center">
+            <h2 class="bronze-text">Welcome to @Model.shop.ShopName!</h2>
+            <p class="golden-text">How may I help you?</p>
+            <img src="~/Images/Shopkeeper.png">
+        </div>
+        <br />
+        <table class="dragon-table" style="width:100%">
+            <thead>
+                <tr>
+                    <th>
+                        Ninja Name
+                    </th>
+                    <th>
+                        Ninja Gold
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        @Model.ninja.Name
+                    </td>
+                    <td>
+                        @Model.ninja.Gold
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+
+        <div class="btn-group" role="group">
+            <a asp-controller="Shopping" asp-route-Id="1" asp-route-shopId="@Model.shop.Id" asp-route-ninjaId="@Model.ninja.Id" asp-action="ShopAt" class="btn golden-button">
+                Shop for Head Items
+            </a>
+            <a asp-controller="Shopping" asp-route-Id="2" asp-route-shopId="@Model.shop.Id" asp-route-ninjaId="@Model.ninja.Id" asp-action="ShopAt" class="btn golden-button">
+                Shop for Chest Items
+            </a>
+            <a asp-controller="Shopping" asp-route-Id="3" asp-route-shopId="@Model.shop.Id" asp-route-ninjaId="@Model.ninja.Id" asp-action="ShopAt" class="btn golden-button">
+                Shop for Hand Items                       
+            </a>                                          
+            <a asp-controller="Shopping" asp-route-Id="4" asp-route-shopId="@Model.shop.Id" asp-route-ninjaId="@Model.ninja.Id" asp-action="ShopAt" class="btn golden-button">
+                Shop for Feet Items                       
+            </a>                                          
+            <a asp-controller="Shopping" asp-route-Id="5" asp-route-shopId="@Model.shop.Id" asp-route-ninjaId="@Model.ninja.Id" asp-action="ShopAt" class="btn golden-button">
+                Shop for Ring Items                       
+            </a>                                          
+            <a asp-controller="Shopping" asp-route-Id="6" asp-route-shopId="@Model.shop.Id" asp-route-ninjaId="@Model.ninja.Id" asp-action="ShopAt" class="btn golden-button">
+                Shop for Necklace Items                   
+            </a>                                          
+            <a asp-controller="Shopping" asp-route-Id="7" asp-route-shopId="@Model.shop.Id" asp-route-ninjaId="@Model.ninja.Id" asp-action="ShopAt" class="btn golden-button">
+                Sell Items
+            </a>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-4 offset-4 row">
+                <div class="col">
+                    <a asp-action="Index" asp-route-Id="@Model.ninja.Id" class="btn bronze-button w-100"><i class="fas fa-sign-out-alt"></i>Leave</a>
+                </div>
+            </div>
+        </div>
+    </div>

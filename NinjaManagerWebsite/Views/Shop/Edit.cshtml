@@ -1,0 +1,184 @@
+﻿@model CEShop
+
+<form method="post" asp-action="Edit" class="dragon-form">
+    <input asp-for="shop.Id" hidden />
+    <div>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="dragon-form-header">
+            <h2 class="pl-3">Edit Shop</h2>
+        </div>
+
+        <div class="p-3 row">
+            <div class="row">
+                <div class="col-12">
+                    <p class="bronze-text">Shop Requirements<p>
+                        <ul class="bronze-text">
+                            <li>A Shop need a Name!</li>
+                            <li>A Shop need at least 3 items of every category</li>
+                        </ul>
+                    <p class="bronze-text">To Select items hold down [CTRL] (windows) or [Command](Mac)</p>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-group row">
+                    <div class="col-1">
+                        <label asp-for="shop.ShopName"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="shop.ShopName" class="form-control" />
+                        <span asp-validation-for="shop.ShopName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group row">
+                            <div class="col-4">
+                                <label asp-for="headItems"></label>
+                            </div>
+                            <div class="col-md-10">
+                                <select multiple="multiple" name="selectedHead" style="min-width:280px">
+                                    @foreach (var item in Model.headItems)
+                                    {
+                                        if (Model.selectedHead.Contains(item.Id))
+                                        {
+                                            <option selected="selected" value="@item.Id"> @item.Name </option>
+                                        }
+                                        else
+                                        {
+                                            <option value="@item.Id">@item.Name</option>
+                                        }
+                                    }
+                                </select>
+                                <span asp-validation-for="selectedHead" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-4">
+                                <label asp-for="chestItems"></label>
+                            </div>
+                            <div class="col-md-10">
+                                <select multiple="multiple" name="selectedChest" style="min-width:280px">
+                                    @foreach (var item in Model.chestItems)
+                                    {
+                                        if (Model.selectedChest.Contains(item.Id))
+                                        {
+                                            <option selected="selected" value="@item.Id"> @item.Name </option>
+                                        }
+                                        else
+                                        {
+                                            <option value="@item.Id">@item.Name</option>
+                                        }
+                                    }
+                                </select>
+                                <span asp-validation-for="selectedChest" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-4">
+                                <label asp-for="handItems"></label>
+                            </div>
+                            <div class="col-md-10">
+                                <select multiple="multiple" name="selectedHand" style="min-width:280px">
+                                    @foreach (var item in Model.handItems)
+                                    {
+                                        if (Model.selectedHand.Contains(item.Id))
+                                        {
+                                            <option selected="selected" value="@item.Id"> @item.Name </option>
+                                        }
+                                        else
+                                        {
+                                            <option value="@item.Id">@item.Name</option>
+                                        }
+                                    }
+                                </select>
+                                <span asp-validation-for="selectedHand" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group row">
+                            <div class="col-4">
+                                <label asp-for="feetItems"></label>
+                            </div>
+                            <div class="col-md-10">
+                                <select multiple="multiple" name="selectedFeet" style="min-width:280px">
+                                    @foreach (var item in Model.feetItems)
+                                    {
+                                        if (Model.selectedFeet.Contains(item.Id))
+                                        {
+                                            <option selected="selected" value="@item.Id"> @item.Name </option>
+                                        }
+                                        else
+                                        {
+                                            <option value="@item.Id">@item.Name</option>
+                                        }
+                                    }
+                                </select>
+                                <span asp-validation-for="selectedFeet" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-4">
+                                <label asp-for="ringItems"></label>
+                            </div>
+                            <div class="col-md-10">
+                                <select multiple="multiple" name="selectedRing" style="min-width:280px">
+                                    @foreach (var item in Model.ringItems)
+                                    {
+                                        if (Model.selectedRing.Contains(item.Id))
+                                        {
+                                            <option selected="selected" value="@item.Id"> @item.Name </option>
+                                        }
+                                        else
+                                        {
+                                            <option value="@item.Id">@item.Name</option>
+                                        }
+                                    }
+                                </select>
+                                <span asp-validation-for="selectedRing" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-4">
+                                <label asp-for="necklaceItems"></label>
+                            </div>
+                            <div class="col-md-10">
+                                <select multiple="multiple" name="selectedNecklace" style="min-width:280px">
+                                    @foreach (var item in Model.necklaceItems)
+                                    {
+                                        if (Model.selectedNecklace.Contains(item.Id))
+                                        {
+                                            <option selected="selected" value="@item.Id"> @item.Name </option>
+                                        }
+                                        else
+                                        {
+                                            <option value="@item.Id">@item.Name</option>
+                                        }
+                                    }
+                                </select>
+                                <span asp-validation-for="selectedNecklace" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-8 offset-2 row">
+                        <div class="col">
+                            <input type="submit" class="btn golden-button w-100" value="Edit" />
+                        </div>
+                        <div class="col">
+                            <a asp-action="Index" class="btn bronze-button w-100"><i class="fas fa-sign-out-alt"></i> Back</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts
+{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

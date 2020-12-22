@@ -1,0 +1,40 @@
+﻿@model IEnumerable<IdentityRole>
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="bronze-text">Role List</h2>
+        </div>
+    </div>
+
+    <br /> <br />
+
+    @if (Model.Count() > 0)
+    {
+        <div class="row">
+        @foreach (var role in Model)
+        {
+            <div class="col">
+                <div class="card mb-3">
+                    <div class="card-header">
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">@role.Name</h5>
+                    </div>
+                    <div class="card-footer">
+                        <div class="w-50 btn-group offset-3" role="group">
+                            <a asp-controller="Role" asp-route-Id="@role.Id" asp-action="Detail" class="btn bronze-button">
+                                Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        </div>
+
+    }
+    else
+    {
+        <p> No roles found! </p>
+    }
+</div>

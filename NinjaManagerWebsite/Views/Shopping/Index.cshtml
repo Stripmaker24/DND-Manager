@@ -1,0 +1,64 @@
+﻿@model NinjaShopSelection
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="bronze-text">Shop Selection</h2>
+        </div>
+    </div>
+    <br />
+    <table class="dragon-table" style="width:100%">
+        <thead>
+            <tr>
+                <th>
+                    Ninja Name
+                </th>
+                <th>
+                    Ninja Gold
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    @Model.ninja.Name
+                </td>
+                <td>
+                    @Model.ninja.Gold
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br /> <br />
+
+    @if (Model.shops.Count() > 0)
+    {
+        <table class="dragon-table" style="width:100%">
+            <thead>
+                <tr>
+                    <th>
+                        Available Shops
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.shops)
+                {
+                    <tr>
+                        <td class="text-center">
+                            <div class="w-75 btn-group" role="group">
+                                <a asp-controller="Shopping" asp-route-shopId="@item.Id" asp-route-ninjaId="@Model.ninja.Id" asp-action="ShopMenu" class="btn golden-button">
+                                    Shop at @item.ShopName!
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p> No Shops found! </p>
+    }
+</div>

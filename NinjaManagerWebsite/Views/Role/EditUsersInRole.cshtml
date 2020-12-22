@@ -1,0 +1,43 @@
+﻿@model UserRole
+
+    <form method="post">
+        <input asp-for="RoleId" hidden />
+        <div class="card">
+            <div class="card-header">
+                <h2>edit users</h2>
+            </div>
+            <div class="card-body">
+                @for (int i = 0; i < Model.Users.Count; i++)
+                {
+                <div class="form-check m-1">
+                    <input type="hidden" asp-for="@Model.Users[i].UserId" />
+                    <input type="hidden" asp-for="@Model.Users[i].UserName" />
+                    <div class="row">
+                        <div class="col-0.5">
+                            <label class="dragon-checkbox">
+                                <input asp-for="@Model.Users[i].IsSelected">
+                                <svg viewBox="0 0 21 21">
+                                    <path d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
+                                    </path>
+                                </svg>
+                            </label>
+                        </div>
+                        <div class="col-1">
+                            <label class="form-check-label" asp-for="@Model.Users[i].IsSelected">@Model.Users[i].UserName</label>
+                        </div>
+                    </div>
+                </div>
+                }
+            </div>
+            <div class="card-footer">
+                <div class="col-8 offset-4 row">
+                    <div class="col">
+                        <input type="submit" class="btn bronze-button w-100" value="Update" />
+                    </div>
+                    <div class="col">
+                        <a asp-action="Detail" asp-route-id="@Model.RoleId" class="btn golden-button w-100"><i class="fas fa-sign-out-alt"></i> Back</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
