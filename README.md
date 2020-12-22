@@ -1,3 +1,3 @@
 # DND-Manager
-A small website to "manage" D&D characters.
-When trying to use make sure that you have the right database connection string set-up!
+	This website was made during the authem of 2020.
+	It has a MVC structure and makes use of Entity Framework.
